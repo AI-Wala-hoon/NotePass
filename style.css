@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 36px;
+  color: #fff;
+  border-bottom: 1px solid #444;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 30px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.card img {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.preview {
+  background-color: #00c2ff;
+  color: #000;
+}
+
+.preview:hover {
+  background-color: #00e1ff;
+}
+
+.download {
+  background-color: #ff4081;
+  color: #fff;
+}
+
+.download:hover {
+  background-color: #ff5f95;
+}
