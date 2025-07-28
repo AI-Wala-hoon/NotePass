@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Notes | DocShare</title>
+  <title>NotePass - Smart Notes Sharing</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="title">NotePass</h1>
-  <div class="grid-container">
-    <!-- Repeat this block for each subject -->
-
-    <!-- __CARDS__ -->
-
-
+  <div class="container">
+    <h1>📚 NotePass</h1>
+    <input type="text" id="searchInput" placeholder="🔍 Search notes..." />
+    <div id="fileCards" class="grid"></div>
   </div>
+
+  <!-- 🔍 Preview Modal -->
+  <div id="previewModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div id="previewArea"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
