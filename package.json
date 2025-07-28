@@ -1,0 +1,24 @@
+{
+  "name": "random",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AI-Wala-hoon/NotePass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AI-Wala-hoon/NotePass/issues"
+  },
+  "homepage": "https://github.com/AI-Wala-hoon/NotePass#readme"
+}
