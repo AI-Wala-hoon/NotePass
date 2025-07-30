@@ -1,14 +1,35 @@
 // public/script.js
 
+document.addEventListener("DOMContentLoaded", () => {
+  loadFiles();
+
+  document.getElementById("searchInput").addEventListener("input", async (e) => {
+    const query = e.target.value.toLowerCase();
+    const res = await fetch("/api/files");
+    const files = await res.json();
+    const filtered = files.filter(f => f.name.toLowerCase().includes(query));
+    displayFiles(filtered);
+  });
+});
+
 async function loadFiles() {
-  const res = await fetch("/api/files");
-  const files = await res.json();
-  displayFiles(files);
+  try {
+    const res = await fetch("/api/files");
+    const files = await res.json();
+    displayFiles(files);
+  } catch (err) {
+    console.error("Failed to load files:", err);
+  }
 }
 
 function displayFiles(files) {
   const container = document.getElementById("fileCards");
   container.innerHTML = "";
+
+  if (!files.length) {
+    container.innerHTML = "<p>No files found.</p>";
+    return;
+  }
 
   files.forEach(file => {
     const card = document.createElement("div");
@@ -31,7 +52,6 @@ function displayFiles(files) {
   setupPreviewButtons();
 }
 
-// Preview modal logic
 function setupPreviewButtons() {
   const modal = document.getElementById("previewModal");
   const previewArea = document.getElementById("previewArea");
@@ -56,16 +76,8 @@ function setupPreviewButtons() {
   });
 
   closeBtn.onclick = () => modal.style.display = "none";
-  window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+
+  window.onclick = e => {
+    if (e.target === modal) modal.style.display = "none";
+  };
 }
-
-// 🔍 Real-time Search
-document.getElementById("searchInput").addEventListener("input", async (e) => {
-  const query = e.target.value.toLowerCase();
-  const res = await fetch("/api/files");
-  const files = await res.json();
-  const filtered = files.filter(f => f.name.toLowerCase().includes(query));
-  displayFiles(filtered);
-});
-
-loadFiles();
