@@ -1,4 +1,3 @@
-/* public/style.css */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -14,7 +13,14 @@ body {
 }
 
 h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.subtitle {
   margin-bottom: 20px;
+  font-size: 16px;
+  color: #aaa;
 }
 
 #searchInput {

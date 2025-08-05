@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NotePass - Smart Notes Sharing</title>
+  <title>NotePass - Free Downloadable Notes for Students</title>
+  <meta name="description" content="NotePass is a smart note-sharing platform for students. Download high-quality, subject-wise study notes for free.">
+  <meta name="keywords" content="free notes download, student notes, subject notes, PDF notes, NotePass, programming notes">
+  <meta name="author" content="NotePass Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://notepass.render.com/">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>📚 NotePass</h1>
-    <input type="text" id="searchInput" placeholder="🔍 Search notes..." />
+    <p class="subtitle">Your Smart Note Sharing Platform</p>
+    <input type="text" id="searchInput" placeholder="🔍 Search notes..." aria-label="Search notes by name" />
     <div id="fileCards" class="grid"></div>
   </div>
 
   <!-- 🔍 Preview Modal -->
-  <div id="previewModal" class="modal">
+  <div id="previewModal" class="modal" role="dialog" aria-modal="true" aria-label="File Preview">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
+      <span class="close-btn" aria-label="Close Preview">&times;</span>
       <div id="previewArea"></div>
     </div>
   </div>
