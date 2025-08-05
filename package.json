@@ -1,7 +1,7 @@
 {
-  "name": "random",
+  "name": "notepass",
   "version": "1.0.0",
-  "description": "",
+  "description": "📚 NotePass - Smart Notes Sharing Platform",
   "main": "server.js",
   "directories": {
     "doc": "docs"
@@ -14,8 +14,8 @@
     "url": "git+https://github.com/AI-Wala-hoon/NotePass.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "AI-Wala-hoon",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/AI-Wala-hoon/NotePass/issues"
