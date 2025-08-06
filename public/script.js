@@ -72,8 +72,18 @@ function setupPreviewButtons() {
 
       setTimeout(() => {
         if (type === "PDF") {
-          previewArea.innerHTML = `<iframe src="${url}" width="100%" height="500px" style="border:none;"></iframe>`;
-        } else if (type === "Image") {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const loader = `<p style="margin-top: 20px;">📄 Loading preview...</p>`;
+
+  previewArea.innerHTML = loader;
+
+  setTimeout(() => {
+    previewArea.innerHTML = isMobile
+      ? `<iframe src="https://docs.google.com/gview?url=${location.origin}${url}&embedded=true" width="100%" height="500px" style="border: none;"></iframe>`
+      : `<embed src="${url}" type="application/pdf" width="100%" height="500px" />`;
+  }, 300); // Small delay to show loader
+}
+ else if (type === "Image") {
           previewArea.innerHTML = `<img src="${url}" alt="Preview Image" style="max-height:75vh; border-radius: 10px;" />`;
         } else {
           previewArea.innerHTML = `<p>Preview not supported for this file type.</p>`;
